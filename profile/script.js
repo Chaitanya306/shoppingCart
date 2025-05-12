@@ -22,10 +22,13 @@ form.addEventListener('submit', function(event){
     event.preventDefault();
     //console.log(event.target.elements.firstname.value)
     //console.log(event.target.elements.lastname.value)
+    const users=JSON.parse(localStorage.getItem('users'))
     let user=JSON.parse(localStorage.getItem('user'))
     user.firstname=event.target.elements.firstname.value
     user.lastname=event.target.elements.lastname.value
     localStorage.setItem('user',JSON.stringify(user))
+    users[user.index]={...user}
+    localStorage.setItem('users',JSON.stringify(users))
     user=JSON.parse(localStorage.getItem('user'))
     event.target.elements.firstname.value=user.firstname
     event.target.elements.lastname.value=user.lastname
