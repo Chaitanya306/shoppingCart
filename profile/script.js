@@ -50,6 +50,7 @@ passwordForm.addEventListener('submit' ,function(event){
         event.target.elements.oldPassword.value=''
         event.target.elements.newPassword.value=''
         event.target.elements.confirmPassword.value=''
+        alert("password changed!")
     }
    else{
       alert("old password doesn't match")
