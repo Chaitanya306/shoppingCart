@@ -2,6 +2,10 @@
 
 
 const items=document.getElementById("items-container");
+
+const search= document.getElementById('search')
+const searchBtn= document.getElementById('searchBtn')
+
 const allElement=document.getElementById("allElement");
 const men=document.getElementById("men");
 const women=document.getElementById("women");
@@ -223,4 +227,29 @@ function sideFilter(){
 
   
 }
+
+
+function searchInput(){
+  items.innerHTML = "";
+  
+  data.forEach(element => {
+    const searchInput=search.value;
+    if (element.title.toLowerCase().includes(searchInput)) {
+      
+      items.innerHTML += `<div class="item">
+              <img src=${element.image} alt="Item" />
+              <h4 class='title'>${element.title}</h4>
+              <div class="info">
+                <p>price ${element.price} &#36;</p>
+                <p>rating ${element.rating.rate}</p>
+                <p>count ${element.rating.count}</p>
+              </div>
+              <button onclick="addCart(${element.id})">Add to Cart</button>
+            </div>`
+    }
+  })  
+
+}
+
+
 
