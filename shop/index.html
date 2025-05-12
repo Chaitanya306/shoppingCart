@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MeShop.</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-left">
+        <h2>MeShop.</h2>
+      </div>
+      <div class="nav-right">
+        <a href="index.html">Home</a>
+        <a href="../login/index.html">Login</a>
+        <a href="../signup/index.html">Signup</a>
+        <a href="../cart/index.html">My Cart</a>
+        <a href="../profile/index.html">Profile</a>
+      </div>
+    </nav>
+
+    <main>
+      <aside>
+        
+        <form>
+        <section>
+          <title>Rating</title>
+          <input
+            type="range"
+            id="range"
+            min="0"
+            max="5"
+            value="0"
+            list="values"
+          />
+          <datalist id="values">
+            <option value="0" label="0"></option>
+            <option value="1"></option>
+            <option value="2"></option>
+            <option value="3"></option>
+            <option value="4"></option>
+            <option value="5" label="5"></option>
+          </datalist>
+        </section>
+        <section>
+          <title>Price Range</title>
+          <ul>
+            <li>
+              <input id="0-25" type="radio" name="prange" value="25"/>
+              <label for="0-25">Up to $25</label>
+            </li>
+            <li>
+              <input id="25-50" type="radio" name="prange" value="50"/>
+              <label for="25-50">Up to $50</label>
+            </li>
+            <li>
+              <input id="50-100" type="radio" name="prange" value="100"/>
+              <label for="50-100">Up to $100</label>
+            </li>
+            <li>
+              <input id="100on" type="radio" name="prange" value="1000"/>
+              <label for="100on">Up to $1000</label>
+            </li>
+          </ul>
+        </section>
+        <button type="button"  onclick="sideFilter()">Apply</button>
+        </form> 
+      </aside>
+      <main-content>
+        <input type="text" placeholder="Search" />
+        <div class="filters">
+          <div class="filter active" onclick="fetching()" id="allElement">All</div>
+          <div class="filter" onclick="filterMens()" id="men">Mens</div>
+          <div class="filter" onclick="filterWomen()" id="women">Womens</div>
+          <div class="filter" onclick="filterJewellery()" id="jewellery">Jewellery</div>
+          <div class="filter" onclick="filterElectronics()" id="electronics">Electronics</div>
+        </div>
+        <section>
+          
+          <div class="items" id="items-container">
+            
+            
+            
+          </div>
+        </section>
+
+        
+      </main-content>
+    </main>
+    <script src="../script.js"></script>
+    <script src="script.js"></script>
+    
+  </body>
+</html>

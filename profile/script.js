@@ -1,0 +1,56 @@
+// Write your script here
+const form=document.getElementById('name')
+const passwordForm=document.getElementById('passwordForm')
+const logout=document.getElementById('logout')
+
+const firstname=document.getElementById('firstname')
+const lastname=document.getElementById('lastname')
+
+const user=JSON.parse(localStorage.getItem('user'))
+
+/*
+if(user==null){
+    alert('please signin to access profile')  
+    window.location.href='../login/index.html'
+     
+}
+*/
+firstname.value=user.firstname
+lastname.value=user.lastname
+
+form.addEventListener('submit', function(event){
+    event.preventDefault();
+    //console.log(event.target.elements.firstname.value)
+    //console.log(event.target.elements.lastname.value)
+    let user=JSON.parse(localStorage.getItem('user'))
+    user.firstname=event.target.elements.firstname.value
+    user.lastname=event.target.elements.lastname.value
+    localStorage.setItem('user',JSON.stringify(user))
+    user=JSON.parse(localStorage.getItem('user'))
+    event.target.elements.firstname.value=user.firstname
+    event.target.elements.lastname.value=user.lastname
+    alert('name changed!')
+})
+
+passwordForm.addEventListener('submit' ,function(event){
+    event.preventDefault()
+    const user=JSON.parse(localStorage.getItem('user'))
+    if(event.target.elements.oldPassword.value==user.password){
+        user.password=event.target.elements.newPassword.value
+        localStorage.setItem('user',JSON.stringify(user))
+    }
+    event.target.elements.oldPassword.value=''
+    event.target.elements.newPassword.value=''
+    event.target.elements.confirmPassword.value=''
+})
+
+logout.addEventListener('click',function(){  
+    const users=JSON.parse(localStorage.getItem('users'))
+    const user=JSON.parse(localStorage.getItem('user'))
+    users[user.index]={...user}
+    localStorage.removeItem('cartItems')
+    localStorage.removeItem('user')
+    localStorage.setItem('users',JSON.stringify(users))
+    window.location.href='../index.html'
+ })
+

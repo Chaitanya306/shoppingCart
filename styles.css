@@ -1,0 +1,90 @@
+/* Write styles here */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+.navbar {
+    display: flex;
+    font-family: "Roboto", sans-serif;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #333;
+    color: white;
+  }
+  .nav-left,
+  .nav-right {
+    display: flex;
+    align-items: center;
+  }
+  .nav-left a,
+  .nav-right a {
+    color: white;
+    text-decoration: none;
+    margin: 0 0.5rem;
+  }
+  .nav-left a:hover,
+  .nav-right a:hover {
+    text-decoration: underline;
+  }
+#main-container{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+#left{
+  width:40%;
+  margin-left:15px;
+}
+#right{
+  width:60%;
+}
+img{
+  width:100%;
+  
+}
+#left h1,h4{
+  margin-top:15px;
+}
+#left div{
+  display: flex;
+  margin-top:15px;
+}
+
+button{
+  width: 60%;
+border-radius: none;
+border: none;
+padding: 1rem;
+font-size: 1rem;
+color: white;
+background-color: black;
+cursor: pointer;
+margin: auto;
+margin-right:10px;
+}
+
+a{
+  text-decoration: none;
+  color:#fff;
+}
+
+#btn-container{
+  display: flex;
+}
+#btn-container a{
+  text-align: center;
+  width: 60%;
+  border-radius: none;
+  border: none;
+  padding: 1rem;
+  font-size: 1rem;
+  color: white;
+  background-color: black;
+  cursor: pointer;
+  margin: auto;
+  margin-right:10px;
+}
