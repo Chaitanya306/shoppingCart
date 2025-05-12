@@ -12,7 +12,7 @@ let user=JSON.parse(localStorage.getItem('user'))
 if(user==null){
    // alert('please signin to access profile')  
    // window.location.href='../login/index.html'
-    user=[]
+    user={}
      
 }
 
