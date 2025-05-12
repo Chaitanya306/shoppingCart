@@ -41,13 +41,20 @@ form.addEventListener('submit', function(event){
 passwordForm.addEventListener('submit' ,function(event){
     event.preventDefault()
     const user=JSON.parse(localStorage.getItem('user'))
+    const users=JSON.parse(localStorage.getItem('users'))
     if(event.target.elements.oldPassword.value==user.password){
         user.password=event.target.elements.newPassword.value
+        users[user.index]={...user}  
         localStorage.setItem('user',JSON.stringify(user))
+        localStorage.setItem('users',JSON.stringify(users))
+        event.target.elements.oldPassword.value=''
+        event.target.elements.newPassword.value=''
+        event.target.elements.confirmPassword.value=''
     }
-    event.target.elements.oldPassword.value=''
-    event.target.elements.newPassword.value=''
-    event.target.elements.confirmPassword.value=''
+   else{
+      alert("old password doesn't match")
+   }
+    
 })
 
 logout.addEventListener('click',function(){  
