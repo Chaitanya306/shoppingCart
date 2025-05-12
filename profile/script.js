@@ -8,13 +8,14 @@ const lastname=document.getElementById('lastname')
 
 const user=JSON.parse(localStorage.getItem('user'))
 
-/*
+
 if(user==null){
-    alert('please signin to access profile')  
-    window.location.href='../login/index.html'
+   // alert('please signin to access profile')  
+   // window.location.href='../login/index.html'
+    user=[]
      
 }
-*/
+
 firstname.value=user.firstname
 lastname.value=user.lastname
 
@@ -26,8 +27,10 @@ form.addEventListener('submit', function(event){
     let user=JSON.parse(localStorage.getItem('user'))
     user.firstname=event.target.elements.firstname.value
     user.lastname=event.target.elements.lastname.value
-    localStorage.setItem('user',JSON.stringify(user))
     users[user.index]={...user}
+    localStorage.setItem('user',JSON.stringify(user))
+   
+   
     localStorage.setItem('users',JSON.stringify(users))
     user=JSON.parse(localStorage.getItem('user'))
     event.target.elements.firstname.value=user.firstname
