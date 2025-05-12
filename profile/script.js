@@ -6,7 +6,7 @@ const logout=document.getElementById('logout')
 const firstname=document.getElementById('firstname')
 const lastname=document.getElementById('lastname')
 
-const user=JSON.parse(localStorage.getItem('user'))
+let user=JSON.parse(localStorage.getItem('user'))
 
 
 if(user==null){
