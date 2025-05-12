@@ -46,12 +46,12 @@ passwordForm.addEventListener('submit' ,function(event){
         user.password=event.target.elements.newPassword.value
         users[user.index]={...user}  
         localStorage.setItem('user',JSON.stringify(user))
-        console.log(users)
+        
         localStorage.setItem('users',JSON.stringify(users))
         event.target.elements.oldPassword.value=''
         event.target.elements.newPassword.value=''
         event.target.elements.confirmPassword.value=''
-       console.log('in the statement')
+       
         alert("password changed!")
     }
    else{
